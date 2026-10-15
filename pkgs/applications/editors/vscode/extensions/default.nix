@@ -3871,6 +3871,23 @@ let
 
       posit.air-vscode = callPackage ./posit.air-vscode { };
 
+      posit.shiny = buildVscodeMarketplaceExtension {
+        mktplcRef = {
+          name = "shiny";
+          publisher = "Posit";
+          version = "1.4.3";
+          hash = "sha256-OAkpU8CTXIL8RFSUhUFZ5QnzC8nr1qLQ4RJNe+HCRwk=";
+        };
+        meta = {
+          changelog = "https://github.com/posit-dev/shiny-vscode/blob/main/CHANGELOG.md";
+          description = "VSCode extension to help launch Shiny applications";
+          downloadPage = "https://marketplace.visualstudio.com/items?itemName=Posit.shiny";
+          homepage = "https://github.com/posit-dev/shiny-vscode/";
+          license = lib.licenses.mit;
+          maintainers = [ lib.maintainers.chvp ];
+        };
+      };
+
       prettier.prettier-vscode = callPackage ./prettier.prettier-vscode { };
 
       prince781.vala = callPackage ./prince781.vala { };
@@ -3931,6 +3948,24 @@ let
       };
 
       rangav.vscode-thunder-client = callPackage ./rangav.vscode-thunder-client { };
+
+      rdebugger.r-debugger = buildVscodeMarketplaceExtension (finalAttrs: {
+        mktplcRef = {
+          name = "r-debugger";
+          publisher = "RDebugger";
+          version = "0.5.6";
+          hash = "sha256-Ru3XzmZb6l/b3b4fWC3V++QXqSqrjuPnqvfkC/qL2oA=";
+        };
+
+        meta = {
+          description = "R Debugger Extension for Visual Studio Code";
+          changelog = "https://github.com/ManuelHentschel/VSCode-R-Debugger/releases/tag/v${finalAttrs.version}";
+          downloadPage = "https://marketplace.visualstudio.com/items?itemName=RDebugger.r-debugger";
+          homepage = "https://github.com/ManuelHentschel/VSCode-R-Debugger";
+          license = lib.licenses.mit;
+          maintainers = [ lib.maintainers.chvp ];
+        };
+      });
 
       rebornix.ruby = buildVscodeMarketplaceExtension {
         mktplcRef = {
